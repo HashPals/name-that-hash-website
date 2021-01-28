@@ -57,6 +57,22 @@ export default function SimpleModal({ open, handleClose, data }) {
   const classes = useStyles();
   let body;
   if (data && open) {
+    let hashes = data.map((row) => (
+      <CustomTooltip
+        title={row.description}
+        placement="bottom"
+        disableHoverListener={row.description ? false : true}
+        arrow={true}
+      >
+        <TableRow key={row.name}>
+          <StyledTableCell component="th" scope="row">
+            {row.description ? row.name : row.name + " *" || "-"}
+          </StyledTableCell>
+          <StyledTableCell align="center">{row.john || "-"}</StyledTableCell>
+          <StyledTableCell align="center">{row.hashcat || "-"}</StyledTableCell>
+        </TableRow>
+      </CustomTooltip>
+    ));
     body = (
       <>
         <h2 id="simple-modal-title" style={{ color: "#2EC4B6" }}>
@@ -73,26 +89,15 @@ export default function SimpleModal({ open, handleClose, data }) {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {data.map((row) => (
-                  <CustomTooltip
-                    title={row.description}
-                    placement="bottom"
-                    disableHoverListener={row.description ? false : true}
-                    arrow={true}
-                  >
-                    <TableRow key={row.name}>
-                      <StyledTableCell component="th" scope="row">
-                        {row.name || "-"}
-                      </StyledTableCell>
-                      <StyledTableCell align="center">
-                        {row.john || "-"}
-                      </StyledTableCell>
-                      <StyledTableCell align="center">
-                        {row.hashcat || "-"}
-                      </StyledTableCell>
-                    </TableRow>
-                  </CustomTooltip>
-                ))}
+                {hashes || (
+                  <TableRow key="empty">
+                    <StyledTableCell component="th" scope="row">
+                      No results found
+                    </StyledTableCell>
+                    <StyledTableCell align="center">-</StyledTableCell>
+                    <StyledTableCell align="center">-</StyledTableCell>
+                  </TableRow>
+                )}
               </TableBody>
             </Table>
           </TableContainer>

@@ -99,11 +99,11 @@ function App() {
             </Button>
           </form>
           <Results handleClose={handleClose} open={open} data={myData} />
+          <Box className={classes.footer}>
+            <Copyright />
+            <BuyMeACoffe />
+          </Box>
         </div>
-        <Box className={classes.footer}>
-          <Copyright />
-          <BuyMeACoffe />
-        </Box>
       </Container>
     </ThemeProvider>
   );
@@ -133,8 +133,11 @@ const useStyles = makeStyles((theme) => ({
   },
   footer: {
     position: "fixed",
-    marginBottom: theme.spacing(8),
-    bottom: "0",
+    bottom: 2,
+    height: "40px",
+    marginTop: "40px",
+    textAlign: "center",
+    verticalAlign: "middle",
   },
 }));
 
