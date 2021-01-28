@@ -66,9 +66,8 @@ export default function SimpleModal({ open, handleClose, data }) {
       >
         <TableRow key={row.name}>
           <StyledTableCell component="th" scope="row">
-            {row.description
-              ? row.name + " <p style={{color:'red'}}>*</p>"
-              : row.name || "-"}
+            {row.name || "-"}
+            {row.description && <p style={{ color: "red" }}> *</p>}
           </StyledTableCell>
           <StyledTableCell align="center">{row.john || "-"}</StyledTableCell>
           <StyledTableCell align="center">{row.hashcat || "-"}</StyledTableCell>
