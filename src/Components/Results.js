@@ -66,7 +66,9 @@ export default function SimpleModal({ open, handleClose, data }) {
       >
         <TableRow key={row.name}>
           <StyledTableCell component="th" scope="row">
-            {row.description ? row.name : row.name + " *" || "-"}
+            {row.description
+              ? row.name + " <p style={{color:'red'}}>*</p>"
+              : row.name || "-"}
           </StyledTableCell>
           <StyledTableCell align="center">{row.john || "-"}</StyledTableCell>
           <StyledTableCell align="center">{row.hashcat || "-"}</StyledTableCell>
@@ -131,7 +133,7 @@ export default function SimpleModal({ open, handleClose, data }) {
           <CancelIcon />
         </div>
         <div className={classes.hint} onClick={handleClose}>
-          <p style={{ color: "#E71D36", fontSize: 12, fontWeight: "bold" }}>
+          <p style={{ color: "#E71D36", fontSize: 16, fontWeight: "bold" }}>
             Hover over an item to see it's description
           </p>
         </div>
