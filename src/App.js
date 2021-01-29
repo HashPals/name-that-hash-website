@@ -100,6 +100,7 @@ function App() {
           </form>
           <Results handleClose={handleClose} open={open} data={myData} />
           <Box className={classes.footer}>
+            <a href="https://github.com/HashPals/Name-That-Hash">GitHub Link</a>
             <Copyright />
             <BuyMeACoffe />
           </Box>
