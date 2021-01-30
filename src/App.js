@@ -51,8 +51,8 @@ function App() {
   );
   const fetchData = async () => {
     try {
-      // const req = await axios.get(url + btoa(hash));
-      // setData(req.data);
+      const req = await axios.get(url + btoa(hash));
+      setData(req.data);
     } catch (err) {
       console.error(err);
       handleClose();

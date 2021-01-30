@@ -12,7 +12,6 @@ import Paper from "@material-ui/core/Paper";
 import Tooltip from "@material-ui/core/Tooltip";
 import Dialog from "@material-ui/core/Dialog";
 import Slide from "@material-ui/core/Slide";
-import { data } from "./data";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import IconButton from "@material-ui/core/IconButton";
@@ -118,7 +117,7 @@ const Row = (props) => {
   );
 };
 
-export default function SimpleModal({ open, handleClose }) {
+export default function SimpleModal({ open, handleClose, data }) {
   const classes = useStyles();
   let body;
   if (data && open) {
