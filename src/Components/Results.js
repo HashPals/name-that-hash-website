@@ -98,8 +98,8 @@ const Row = (props) => {
         <TableCell component="th" scope="row">
           {row.name}
         </TableCell>
-        <TableCell align="right">{row.hashcat}</TableCell>
-        <TableCell align="right">{row.john}</TableCell>
+        <TableCell align="center">{row.hashcat}</TableCell>
+        <TableCell align="center">{row.john}</TableCell>
       </StyledTableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
