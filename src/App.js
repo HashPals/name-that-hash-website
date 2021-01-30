@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Copyright from "./Components/Copyright";
@@ -14,6 +11,7 @@ import DarkModeToggle from "react-dark-mode-toggle";
 import BuyMeACoffe from "./Components/Coffee";
 import Results from "./Components/Results";
 import axios from "axios";
+import Name from "./name.png";
 const url = "https://9w6lgipuv4.execute-api.eu-west-2.amazonaws.com/Start/api/";
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => false);
@@ -69,12 +67,7 @@ function App() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOpenIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Name That Hash
-          </Typography>
+          <img alt="NTH" src={Name} height="280" />
           <form className={classes.form} noValidate onSubmit={handleSubmit}>
             <TextField
               variant="outlined"
