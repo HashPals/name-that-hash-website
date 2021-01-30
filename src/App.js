@@ -51,8 +51,8 @@ function App() {
   );
   const fetchData = async () => {
     try {
-      const req = await axios.get(url + btoa(hash));
-      setData(req.data);
+      // const req = await axios.get(url + btoa(hash));
+      // setData(req.data);
     } catch (err) {
       console.error(err);
       handleClose();
@@ -100,9 +100,10 @@ function App() {
           </form>
           <Results handleClose={handleClose} open={open} data={myData} />
           <Box className={classes.footer}>
-            <a href="https://github.com/HashPals/Name-That-Hash">GitHub Link</a>
+            <div style={{ marginTop: "110px" }}>
+              <BuyMeACoffe />
+            </div>
             <Copyright />
-            <BuyMeACoffe />
           </Box>
         </div>
       </Container>
@@ -133,10 +134,10 @@ const useStyles = makeStyles((theme) => ({
     right: "0",
   },
   footer: {
-    position: "fixed",
+    // position: "fixed",
     bottom: 2,
     height: "40px",
-    marginTop: "40px",
+    marginTop: "120px",
     textAlign: "center",
     verticalAlign: "middle",
   },
